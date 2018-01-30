@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # app spesific
-client_id.txt
+client_id.json
 timeedit.ics
 courses.txt
 
