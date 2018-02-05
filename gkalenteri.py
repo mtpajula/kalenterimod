@@ -64,9 +64,10 @@ class gkalenteri:
 
     def delete(self, filter, key='summary'):
         for event in self.events:
-            if filter in event[key]:
-                print('DELETE', event['summary'])
-                self.service.events().delete(calendarId='primary', eventId=event['id']).execute()
+            if key in event:
+                if filter in event[key]:
+                    print('DELETE', event['summary'])
+                    self.service.events().delete(calendarId='primary', eventId=event['id']).execute()
 
     def add(self, events):
         for e in events:
