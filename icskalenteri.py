@@ -31,7 +31,11 @@ class icskalenteri:
                 record = True
                 continue
             elif line.startswith('END:VEVENT'):
-                self.set_event(event)
+                try:
+                    self.set_event(event)
+                except:
+                    print('Failed to set event')
+                    print(event)
                 record = False
                 event = []
 
